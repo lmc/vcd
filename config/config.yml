@@ -1,0 +1,13 @@
+users:
+	active: false
+	
+paths:
+	game: C:\Users\Luke\Documents\Games\VC\
+	exe: (%paths.game%)gta-vc.exe
+	data: (%paths.game%)data\
+	scm: (%paths.data%)main.scm
+	ides:
+		- (%paths.data%)default.ide
+
+compiler:
+	

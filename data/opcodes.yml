@@ -1,0 +1,140 @@
+0001:
+	name: sleep
+	args:
+		- [int, time]
+
+0002:
+	name: jump
+	args:
+		- [offset, jump to]
+		
+004D:
+	name: jumpIfFalse
+	args:
+		- [offset, jumpIfFalse]
+		
+004C:
+	name: jumpIfTrue
+	args:
+		- [offset, jumpIfTrue]
+		
+0050:
+	name: goSub
+	args:
+		- [offset, goSub]
+		
+00D7:
+	name: createThreadWithGameOverCheck
+	args:
+		- [offset, thread]
+		
+004F:
+	name: createThread
+	args:
+		- [offset, thread]
+		
+03A4:
+	name: nameThread
+	args:
+		- [string, name]
+
+016A:
+	name: fade
+	notes: Does a fade out/in from a solid background to the game. 0 = fade out, 1 = fade in
+	args:
+		- [int, time]
+		- [bool, out/in]
+
+01F0:
+	name: setMaxWantedLevel
+	args:
+		- [int, maxWantedLevel]
+
+0111:
+	name: setGameOverCheck
+	args:
+		- [bool, on/off]
+		
+00C0:
+	name: setTime
+	args:
+		- [int, hour]
+		- [int, minute]
+		
+04E4:
+	name: reInitStreamingAt
+	args:
+		- [float, x]
+		- [float, y]
+		
+03CB:
+	name: setCameraPosition
+	args:
+		- [float, x]
+		- [float, y]
+		- [float, z]
+		
+0053:
+	name: createPlayer
+	args:
+		- [object, model]
+		- [float, x]
+		- [float, y]
+		- [float, z]
+		- [return, return]
+		
+01F5:
+	name: createActorFromPlayer
+	args:
+		- [player, player]
+		- [actor, playerActor]
+		
+01B6:
+	name: setWeather
+	args:
+		- [int, weather]
+		
+00D6:
+	name: if
+	notes: Indicates the start of an IF block. conditionCount starts from 0, so 0 = one condition, 1 = two conditions, etc.
+	args:
+		- [int, conditionCount]
+		
+0118:
+	name: actorDead
+	args:
+		- [actor, actor]
+		
+0352:
+	name: setActorSkin
+	args:
+		- [actor, actor]
+		- [string, skin]
+		
+038B:
+	name: loadRequestedModels
+	
+0353:
+	name: reInitActor
+	args:
+		- [actor, actor]
+		
+0256:
+	name: isPlayerSet
+	args:
+		- [player, player]
+		
+04BB:
+	name: setInterior
+	args:
+		- [int, interior]
+		
+01B4:
+	name: lockPlayer
+	args:
+		- [player, player]
+		- [bool, lock/unlock]
+		
+01B7:
+	name: releaseWeather
+	

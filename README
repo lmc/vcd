@@ -1,0 +1,23 @@
+VCDisassembler
+A PHP disassembler for GTA3-engine mission scripts.
+Copyright 2008-2009 Luke Mcildoon, licenced under the MIT licence.
+
+NOTE: This will not run as-is due to it's reliance on a non-publically-available framework. A version without this dependency should be coming soon.
+
+Background:
+All games using the GTA3 engine (GTA3, Vice City and San Andreas) share a common scripting language, best described as something fairly close to ASM. It interprets opcodes which map directly to internal game functions, and has only four flow control operators: jump, jump_if_false, gosub and return. More complex operations like switch statements, arrays, etc. can be implemented through clever (ab)use of casting variables to integers, as internally they are just pointers to cars, actors, etc. GTA:SA eventually added native arrays and jump tables. The environment's only real notable features are garbage collection for missions, scripts attached to objects, and a basic "threading" system. Most other features need to be hand-implemented, including loading/waiting loops, checking of long-lasting conditions (like mission start triggers), etc.
+
+What this code does:
+This will dissassemble the compiled SCM scripts and produce nicely-formatted ASM-like code, in a style similar to other tools (Barton Waterduck's Mission Builder, to be precise). It can then take this disassembled code and recompile it back into an executable SCM file.
+
+Do note that there will be differences between SCM files produced by VCD and Barton's, as VCD allocates variable addresses based on the internal argument order, while Barton's allocates based on the disassembled argument order, which doesn't always match.
+
+Usage:
+Please set up the paths to the relevent files in config/config.yml first, then:
+
+To disassemble main.scm to main.txt:
+php app.php decompile to_file main.txt
+
+To compile and copy main.txt to main.scm:
+php app.php compile from_file main.txt
+php app.php compile and_copy
